@@ -1,0 +1,19 @@
+nome = input('Como você se chama?  ')
+posto = input('Qual o nome do posto que você quer abastecer?  ')
+carro = input('Qual o modelo do seu carro?  ')
+tanque = int(input('O tanque comporta quantos litros?  '))
+autonomia_alcool = float(input('Quantos Km/L seu carro faz com Etanol?  '))
+autonomia_gasolina = float(input('Quantos Km/L seu carro faz com Gasolina?  '))
+preco_alcool = float(input('Qual o valor do Etanol?  '))
+preco_gasolina = float(input('Qual o valor da Gasolina?  '))
+porcentagem = round(preco_alcool * 100 / preco_gasolina, 2)
+calculo_autonomia_alcool = round(autonomia_alcool * tanque, 2)
+calculo_autonomia_gasolina = autonomia_gasolina * tanque
+custo_alcool = tanque * preco_alcool
+custo_gasolina = tanque * preco_gasolina
+if porcentagem <= 70:
+    print(nome, ', no posto ', posto, 'o Etanol representa ', porcentagem, ' % do valor da Gasolina. Portanto, compensa abastecer com Etanol.')
+    print(nome, ' , se você abastecer com Etanol, rodará cerca de ', calculo_autonomia_alcool, ' km e gastará cerca de R$ ', custo_alcool, 'para encher o tanque de seu', carro, '.')
+else:
+    print(nome, ', no posto ', posto, 'o Etanol representa ', porcentagem, ' % do valor da Gasolina. Portanto, NÃO compensa abastecer com Etanol.')
+    print(nome, ' , se você abastecer com Gasolina, rodará cerca de ', calculo_autonomia_gasolina, ' km e gastará cerca de R$ ', custo_gasolina, 'para encher o tanque de seu ', carro, '.')
